@@ -26,6 +26,8 @@ The following three variable must be fill to be able to use the widget.
 
 
 
+
+
 ## Copyright
 
 2019 © [IOTBITS](https://iotbits.net/)
