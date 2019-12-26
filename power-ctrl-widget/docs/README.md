@@ -2,15 +2,11 @@
 
 Ubidots Power Control Widget for ModbusBox devices
 
-![clip](clip.gif)
+![clip](widget.gif)
 
 ### Description
 
-The power control widget allows the user to control the drive's on/off status and show the current drive's state based on the response received from the device.
-
- 
-
-![widget](widget.png)
+The power control widget allows the user to control the drive's on/off status and show the current drive's state based on the response received from the device. 
 
 ### Third party libraries
 
@@ -20,13 +16,13 @@ This widget uses the jQuery library. Add the following URL to the 3rd party libr
 
 
 
-![3rd-party-libraries](/libraries.png)
+![3rd-party-libraries](libraries.png)
 
-### Widget Setup
+### Setup
 
-The following three variable must be fill to be able to use the widget.
+The following three variable must be fill out to be able to use the widget.
 
-![variables](/variables.png)
+![variables](variables.png)
 
 `TOKEN` : A valid Ubidots token
 
@@ -36,11 +32,7 @@ The following three variable must be fill to be able to use the widget.
 
 > The variable ID can be found in the variable's details section as shown in the image below
 
- ![variable-id](/variable-id.png)
-
-
-
-
+ ![variable-id](variable-id.png)
 
 
 

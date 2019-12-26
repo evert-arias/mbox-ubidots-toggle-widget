@@ -1,11 +1,11 @@
 // TOKEN
-var TOKEN = 'BBFF-Ujy6Z4GF2Ks8MP4FeUKpaJj9zwMrUc';
+var TOKEN = '';
 
 // INPUT VARIABLE
-var IN_VARIABLE_ID = '5e026af40ff4c3598b7421cc';
+var IN_VARIABLE_ID = '';
 
 // OUTPUT VARIABLE
-var OUT_VARIABLE_ID = '5e043e431d84722a2afcebe8';
+var OUT_VARIABLE_ID = '';
 
 // HTML elements
 var button25hz = $('#mbox-btn-25hz');

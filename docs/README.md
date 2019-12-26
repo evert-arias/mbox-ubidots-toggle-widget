@@ -7,7 +7,7 @@ Custom Ubidots widgets for ModbusBox devices.
 
 [Speed Control Widget](../speed-ctrl-widget)
 
-### Widget source code
+### How to use
 
 Each widget has three files. Add the content of each file, in the corresponding section of the HTML canvas editor.
 
