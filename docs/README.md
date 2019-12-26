@@ -1,7 +1,11 @@
 # ModbusBox Ubidots Widgets
 Custom Ubidots widgets for ModbusBox devices.
 
+### Widgets
 
+[Power Control Widget](power-ctrl-widget/README.md)
+
+[Speed Control Widget](speed-ctrl-widget/README.md)
 
 ### Third party libraries
 
@@ -11,13 +15,11 @@ All of the ModbusBox Ubidots Widget uses the jQuery library. Add the following U
 
 
 
-![3rd-party-libraries](assets/libraries.png)
+![3rd-party-libraries](libraries.png)
 
+### Widget source code
 
-
-### Source files
-
-Add the content of each file, in the corresponding section of the HTML canvas editor.
+Each widget has three files. Add the content of each file, in the corresponding section of the HTML canvas editor.
 
 * Add the content of **widget.html** to the **HTML** tab.
 
@@ -25,9 +27,7 @@ Add the content of each file, in the corresponding section of the HTML canvas ed
 
 * Add the content of **widget.js** to the **JAVASCRIPT** tab.
 
-![source-files](assets/source-files.png)
-
-
+![source-files](source-code.png)
 
 ## Copyright
 
