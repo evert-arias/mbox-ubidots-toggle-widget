@@ -1,15 +1,13 @@
-# ModbusBox Ubidots Toggle Widget
-Custom Ubidots widget that updates its status based on the response from the device.
+# ModbusBox Ubidots Widgets
+Custom Ubidots widgets for ModbusBox devices.
 
 
 
 ### Third party libraries
 
-#### jQuery
+All of the ModbusBox Ubidots Widget uses the jQuery library. Add the following URL to the 3rd party libraries section in  the HTML canvas properties window.
 
-Add the jQuery CDN URL to the 3rd party libraries section in  the HTML canvas properties window.
-
-https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+* https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 
 
 
