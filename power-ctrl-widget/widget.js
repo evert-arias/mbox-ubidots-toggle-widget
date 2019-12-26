@@ -13,8 +13,12 @@ var label = $('#mbox-widget-label');
 var spinner = $('#mbox-widget-spinner');
 
 // Global variables
-var status = 0;  // 0:Stopped, 1:Running, 2:Waiting response from device
-var motorState;  // Motor state
+var status = 0;  		// 0:Stopped, 1:Running, 2:Waiting response from device
+var previous_status;    // Previous status
+var motorState;  		// Motor state
+var update_ms = 1000; 	// Update interval in ms
+var timeout;            // Timeout object
+var timeout_ms = 30000; // Timeout value in ms
 
 // Get data from variable
 function getDataFromVariable(variable, token, callback) {
@@ -71,9 +75,19 @@ button.on('click', function () {
     // Send
     sendValue(OUT_VARIABLE_ID, !status, TOKEN, function (value) {
         // Set status = waiting
+        previous_status = status;
         status = 2;
         // Update UI
         updateUI(status);
+
+        // Set timeout
+        timeout = setTimeout(() => {
+            status = previous_status;
+            updateUI(status);
+            label.text("Timeout: No response from device");
+            label.removeClass();
+            label.addClass("text-danger text-wrap text-monospace");
+        }, timeout_ms);
     });
 });
 
@@ -117,7 +131,6 @@ function updateUI(status) {
 
 // Periodically read data from variable
 function update() {
-    var interval = 1000;
 
     // Get data from variable every 1000 ms
     setInterval(() => {
@@ -128,6 +141,9 @@ function update() {
             if (motorState === value) {
                 return;
             }
+
+            // Reset timeout
+            clearTimeout(timeout);
 
             // Copy new state
             motorState = value;
@@ -144,7 +160,7 @@ function update() {
             // Update UI
             updateUI(status);
         });
-    }, interval);
+    }, update_ms);
 }
 
 // Execute update
