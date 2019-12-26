@@ -1,19 +1,19 @@
 // TOKEN
 var TOKEN = '';
 
-// Input variable
+// INPUT VARIABLE
 var IN_VARIABLE_ID = '';
 
-// Output variable
+// OUTPUT VARIABLE
 var OUT_VARIABLE_ID = '';
 
 // HTML elements
-var button = $('#mbox-toggle-widget-button');
-var label = $('#mbox-toggle-widget-label');
-var spinner = $('#mbox-toggle-widget-spinner');
+var button = $('#mbox-widget-button');
+var label = $('#mbox-widget-label');
+var spinner = $('#mbox-widget-spinner');
 
 // Global variables
-var status = 0;  // 0:Stopped, 1:Running, 2:Waiting for response
+var status = 0;  // 0:Stopped, 1:Running, 2:Waiting response from device
 var motorState;  // Motor state
 
 // Get data from variable
@@ -55,6 +55,7 @@ function sendValue(variable, valueToSend, token, callback) {
     });
 }
 
+// Handle button's click
 button.on('click', function () {
 
     // Do not continue if waiting for response
@@ -65,12 +66,13 @@ button.on('click', function () {
     // Update status label
     label.text("Sending...");
     label.removeClass();
-    label.addClass("text-success");
+    label.addClass("text-primary text-wrap text-monospace");
 
     // Send
     sendValue(OUT_VARIABLE_ID, !status, TOKEN, function (value) {
         // Set status = waiting
         status = 2;
+        // Update UI
         updateUI(status);
     });
 });
@@ -85,10 +87,10 @@ function updateUI(status) {
         button.show();
         // Spinner
         spinner.hide();
-        // Status label
-        label.text("Stopped");
+        // Label
+        label.text("Motor stopped");
         label.removeClass();
-        label.addClass("text-danger");
+        label.addClass("text-danger text-wrap text-monospace");
     } else if (status === 1) {
         // Button
         button.text("Stop");
@@ -97,19 +99,19 @@ function updateUI(status) {
         button.show();
         // Spinner
         spinner.hide();
-        // Status label
-        label.text("Running");
+        // Label
+        label.text("Motor running");
         label.removeClass();
-        label.addClass("text-success");
+        label.addClass("text-success text-wrap text-monospace");
     } else if (status === 2) {
         // Hide button
         button.hide();
         // Spinner
         spinner.show();
-        // Status label
-        label.text("Waiting for response");
+        // Label
+        label.text("Waiting response from device");
         label.removeClass();
-        label.addClass("text-warning");
+        label.addClass("text-secondary text-wrap text-monospace");
     }
 }
 
@@ -126,8 +128,11 @@ function update() {
             if (motorState === value) {
                 return;
             }
+
+            // Copy new state
             motorState = value;
 
+            // Convert motor state to status
             if (motorState === 128) {
                 status = 0;
             } else if (motorState === 131) {
@@ -135,6 +140,8 @@ function update() {
             } else {
                 status = 0;
             }
+
+            // Update UI
             updateUI(status);
         });
     }, interval);

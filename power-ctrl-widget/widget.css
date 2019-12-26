@@ -1,13 +1,11 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css');
 
-.mbox-toggle-widget {
+.mbox-widget {
 	left: 50%;
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
-
-/* Custom button */
 
 .btn {
     padding: 34px 54px;
