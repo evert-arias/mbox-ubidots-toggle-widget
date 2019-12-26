@@ -17,9 +17,15 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 
 
 
-### Source code
+### Source files
 
-Add the content of each file in the corresponding section of the HTML canvas editor.
+Add the content of each file, in the corresponding section of the HTML canvas editor.
+
+* Add the content of **widget.html** to the **HTML** tab
+
+* Add the content of **widget.css** to the **CSS** tab
+
+* Add the content of **widget.js** to the **JAVASCRIPT** tab
 
 ![source-files](assets/source-files.png)
 
