@@ -20,7 +20,7 @@ The following three variable must be fill to be able to use the widget.
 
 > The variable ID can be found in the variable's details section as shown in the image below
 
- ![variable-id](C:\Dev\IOTBITS\mbox-ubidots-toggle-widget\power-ctrl-widget\variable-id.png)
+ ![variable-id](variable-id.png)
 
 
 
