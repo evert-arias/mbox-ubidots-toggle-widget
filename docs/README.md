@@ -3,9 +3,9 @@ Custom Ubidots widgets for ModbusBox devices.
 
 ### Widgets
 
-[Power Control Widget](power-ctrl-widget/README.md)
+[Power Control Widget](../power-ctrl-widget)
 
-[Speed Control Widget](speed-ctrl-widget/README.md)
+[Speed Control Widget](../speed-ctrl-widget)
 
 ### Third party libraries
 
