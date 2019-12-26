@@ -7,7 +7,7 @@ Custom Ubidots widget that updates its status based on the response from the dev
 
 #### jQuery
 
-Please add the following jQuery CDN URL to the 3rd party libraries section on the HTML canvas
+Add the jQuery CDN URL to the 3rd party libraries section in  the HTML canvas properties window.
 
 https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 
@@ -16,6 +16,12 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 ![3rd-party-libraries](assets/libraries.png)
 
 
+
+### Source code
+
+Add the content of each file in the corresponding section of the HTML canvas editor.
+
+![source-files](assets/source-files.png)
 
 
 
