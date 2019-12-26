@@ -6,13 +6,7 @@ Ubidots Power Control Widget for ModbusBox devices
 
 The power control widget allows the user to control the drive's on/off status and show the current drive's state based on the response received from the device. 
 
-![widget](widget-stopped.png)
-
-![widget-waiting](widget-waiting.png)
-
-
-
-![widget-running](widget-running.png)
+![widget](widget.png)
 
 ### Widget Setup
 
