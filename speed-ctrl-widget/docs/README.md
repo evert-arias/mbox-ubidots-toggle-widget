@@ -12,4 +12,5 @@ The speed control widget allows the user to control the drive's speed and show t
 
 ## Copyright
 
-2019 © [IOTBITS](
+2019 © [IOTBITS](https://iotbits.net/)
+
