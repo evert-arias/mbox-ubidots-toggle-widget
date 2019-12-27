@@ -12,21 +12,20 @@ var button = $('#mbox-widget-button');
 var label = $('#mbox-widget-label');
 var spinner = $('#mbox-widget-spinner');
 
-// Motor statuses
+// Motor status
 const MOTOR_STOPPED = 0;
 const MOTOR_RUNNING = 1;
 
-// Widget statuses
-const WG_STOPPED = 0;
-const WG_RUNNING = 1;
-const WG_NO_RESPONSE = 2;
-const WG_WAITING = 3;
-const WG_SENDING = 4;
+// UI status
+const UI_STOPPED = 0;
+const UI_RUNNING = 1;
+const UI_NO_RESPONSE = 2;
+const UI_WAITING = 3;
+const UI_SENDING = 4;
 
-var wg_status;
-var motor_status;
-
-var received = {};      		    // Received value
+var ui_status;		// Variable that holds the current UI status
+var motor_status;   // Variable that holds the current motor status
+var received = {};      		    // Received object
 var update_ms = 1000; 				// Update interval in ms
 var response_timeout;      			// Timeout object
 var response_timeout_ms = 30000; 	// Timeout value in ms
@@ -56,7 +55,8 @@ function setResponseTimeout() {
 		response_timeout = null;
 	}
 	response_timeout = setTimeout(() => {
-		updateUI(WG_NO_RESPONSE);
+		// Update UI
+		updateUI(UI_NO_RESPONSE);
 	}, response_timeout_ms);
 }
 
@@ -86,27 +86,26 @@ function sendValue(variable, valueToSend, token, callback) {
 
 // Handle button's click
 button.on('click', function () {
-
-	updateUI(WG_SENDING);
-
+	// Update UI
+	updateUI(UI_SENDING);
 	// Send
 	sendValue(OUT_VARIABLE_ID, !motor_status, TOKEN, function (value) {
-
-		// Set 
-		updateUI(WG_WAITING);
-
+		// Update UI
+		updateUI(UI_WAITING);
 		// Set timeout
 		timeout = setTimeout(() => {
-			updateUI(WG_NO_RESPONSE);
+			// Update UI
+			updateUI(UI_NO_RESPONSE);
 		}, timeout_ms);
 	});
 });
 
 // Update widget UI based on status
 function updateUI(status) {
-	wg_status = status;
 
-	if (wg_status === WG_STOPPED) {
+	ui_status = status;
+
+	if (ui_status === UI_STOPPED) {
 		// Button
 		button.text("Start");
 		button.removeClass();
@@ -118,7 +117,7 @@ function updateUI(status) {
 		label.text("Motor stopped");
 		label.removeClass();
 		label.addClass("text-danger text-wrap text-monospace");
-	} else if (status === WG_RUNNING) {
+	} else if (status === UI_RUNNING) {
 		// Button
 		button.text("Stop");
 		button.removeClass();
@@ -130,7 +129,7 @@ function updateUI(status) {
 		label.text("Motor running");
 		label.removeClass();
 		label.addClass("text-success text-wrap text-monospace");
-	} else if (status === WG_NO_RESPONSE) {
+	} else if (status === UI_NO_RESPONSE) {
 		// Button
 		button.show();
 		// Spinner
@@ -139,7 +138,7 @@ function updateUI(status) {
 		label.text("Timeout: No response from device");
 		label.removeClass();
 		label.addClass("text-danger text-wrap text-monospace");
-	} else if (status === WG_WAITING) {
+	} else if (status === UI_WAITING) {
 		// Button
 		button.hide();
 		// Spinner
@@ -148,7 +147,7 @@ function updateUI(status) {
 		label.text("Waiting response from device");
 		label.removeClass();
 		label.addClass("text-secondary text-wrap text-monospace");
-	} else if (status === WG_SENDING) {
+	} else if (status === UI_SENDING) {
 		// Button
 		button.hide();
 		// Spinner
@@ -182,19 +181,21 @@ function update() {
 
 			// Convert motor state to status
 			if (received.value === 128) {
+				// Set motor status
 				motor_status = MOTOR_STOPPED;
 				// Update UI
-				updateUI(WG_STOPPED);
+				updateUI(UI_STOPPED);
 			} else if (received.value === 131) {
+				// Set motor status
 				motor_status = MOTOR_RUNNING;
 				// Update UI
-				updateUI(WG_RUNNING);
+				updateUI(UI_RUNNING);
 			} else {
+				// Set motor status
 				motor_status = MOTOR_STOPPED;
 				// Update UI
-				updateUI(WG_STOPPED);
+				updateUI(UI_STOPPED);
 			}
-
 		});
 	}, update_ms);
 }
