@@ -7,7 +7,6 @@ var IN_VARIABLE_ID = '';
 // OUTPUT VARIABLE
 var OUT_VARIABLE_ID = '';
 
-
 // HTML elements
 var button25hz = $('#mbox-btn-25hz');
 var button35hz = $('#mbox-btn-35hz');
@@ -23,7 +22,7 @@ const SENDING = 2; 		// Status: Sending
 const WAITING = 3; 		// Status: Waiting
 
 var status;							// Status
-var received = {};      			// Motor Speed Reference
+var received = {};      		    // Motor Speed Reference
 var update_ms = 1000; 				// Update interval in ms
 var response_timeout;      			// Timeout object
 var response_timeout_ms = 30000; 	// Timeout value in ms
