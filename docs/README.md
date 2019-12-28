@@ -7,6 +7,10 @@ Custom Ubidots widgets for ModbusBox devices.
 
 [Speed Control Widget](../speed-ctrl-widget)
 
+[VFD Status Widget](../vfd-status-widget)
+
+[I/O Status Widget](../io-status-widget)
+
 ### How to use
 
 Each widget has three files. Add the content of each file, in the corresponding section of the HTML canvas editor.

@@ -1,0 +1,118 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css');
+
+.led-container {
+	display: none;
+}
+
+.spinner-container{
+ 	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.led-box {
+  height: 30px;
+  width: 20%;
+  margin: 10px 0;
+  float: left;
+}
+
+.led-box p {
+  font-size: 12px;
+  text-align: center;
+  margin: 1em;
+}
+
+.led-on {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #1AB755;
+  border-radius: 50%;
+}
+
+.led-off {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #BCBFBD;
+  border-radius: 50%;
+}
+
+.led-warn {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #FFC300;
+  border-radius: 50%;
+  -webkit-animation: blinkYellow 0.5s infinite;
+  -moz-animation: blinkYellow 0.5s infinite;
+  -ms-animation: blinkYellow 0.5s infinite;
+  -o-animation: blinkYellow 0.5s infinite;
+  animation: blinkYellow 0.5s infinite;
+}
+@-webkit-keyframes blinkYellow {
+    from { background-color:#FFC300; }
+    50% { background-color: #BCBFBD;}
+    to { background-color: #FFC300; }
+}
+@-moz-keyframes blinkYellow {
+    from { background-color: #FFC300; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #FFC300; }
+}
+@-ms-keyframes blinkYellow {
+    from { background-color: #FFC300; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #FFC300; }
+}
+@-o-keyframes blinkYellow {
+    from { background-color:#FFC300; }
+    50% { background-color: #BCBFBD;}
+    to { background-color: #FFC300; }
+}
+@keyframes blinkYellow {
+    from { background-color: #FFC300; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #FFC300; }
+}
+
+.led-danger {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  -webkit-animation: blinkRed 0.5s infinite;
+  -moz-animation: blinkRed 0.5s infinite;
+  -ms-animation: blinkRed 0.5s infinite;
+  -o-animation: blinkRed 0.5s infinite;
+  animation: blinkRed 0.5s infinite;
+}
+
+@-webkit-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #BCBFBD;}
+    to { background-color: #F00; }
+}
+@-moz-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #F00; }
+}
+@-ms-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #F00; }
+}
+@-o-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #BCBFBD;}
+    to { background-color: #F00; }
+}
+@keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #BCBFBD; }
+    to { background-color: #F00; }
+}
