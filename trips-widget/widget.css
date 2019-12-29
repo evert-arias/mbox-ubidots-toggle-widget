@@ -1,0 +1,42 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css');
+
+.table-container {
+	display: none;
+}
+
+.spinner-container {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  border: 0;
+}
+
+table tbody {
+  display: table;
+  width: 100%;
+  min-height:50px;
+  overflow-y:scroll;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
