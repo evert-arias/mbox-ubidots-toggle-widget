@@ -55,7 +55,6 @@ function setResponseTimeout() {
 		response_timeout = null;
 	}
 	response_timeout = setTimeout(() => {
-		// Update UI
 		updateUI(UI_NO_RESPONSE);
 	}, response_timeout_ms);
 }
@@ -86,17 +85,10 @@ function sendValue(variable, valueToSend, token, callback) {
 
 // Handle button's click
 button.on('click', function () {
-	// Update UI
 	updateUI(UI_SENDING);
 	// Send
 	sendValue(OUT_VARIABLE_ID, !motor_status, TOKEN, function (value) {
-		// Update UI
 		updateUI(UI_WAITING);
-		// Set timeout
-		timeout = setTimeout(() => {
-			// Update UI
-			updateUI(UI_NO_RESPONSE);
-		}, timeout_ms);
 	});
 });
 
@@ -185,7 +177,7 @@ function update() {
 				motor_status = MOTOR_STOPPED;
 				// Update UI
 				updateUI(UI_STOPPED);
-			} else if (received.value === 131) {
+			} else if (received.value === 131 || received.value === 137 || received.value === 641 || received.value === 133) {
 				// Set motor status
 				motor_status = MOTOR_RUNNING;
 				// Update UI
