@@ -7,6 +7,7 @@ var IN_VARIABLE_ID = '';
 // OUTPUT VARIABLE
 var OUT_VARIABLE_ID = '';
 
+
 // HTML elements
 var button25hz = $('#mbox-btn-25hz');
 var button35hz = $('#mbox-btn-35hz');
