@@ -5,6 +5,7 @@ var TOKEN = '';
 var IN_VARIABLE_ID = '';
 
 
+
 var leds = $('.led-container');
 var spinner = $('.spinner-container');
 
@@ -28,11 +29,11 @@ var bits = [
 	{ bit: 'bit-7', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
 	{ bit: 'bit-8', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
 	{ bit: 'bit-9', abbr: 'Relay', tooltip: 'Relay Status', active: true, on_class: 'led-on', off_class: 'led-off' },
-	{ bit: 'bit-10', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
-	{ bit: 'bit-11', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
-	{ bit: 'bit-12', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
-	{ bit: 'bit-13', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' },
-	{ bit: 'bit-14', abbr: 'N/A', tooltip: 'Reserved', active: true, on_class: 'led-on', off_class: 'led-off' }
+	{ bit: 'bit-10', abbr: 'N/A', tooltip: 'Reserved', active: false, on_class: 'led-on', off_class: 'led-off' },
+	{ bit: 'bit-11', abbr: 'N/A', tooltip: 'Reserved', active: false, on_class: 'led-on', off_class: 'led-off' },
+	{ bit: 'bit-12', abbr: 'N/A', tooltip: 'Reserved', active: false, on_class: 'led-on', off_class: 'led-off' },
+	{ bit: 'bit-13', abbr: 'N/A', tooltip: 'Reserved', active: false, on_class: 'led-on', off_class: 'led-off' },
+	{ bit: 'bit-14', abbr: 'N/A', tooltip: 'Reserved', active: false, on_class: 'led-on', off_class: 'led-off' }
 ];
 
 // Get data from variable
