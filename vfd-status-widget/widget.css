@@ -1,6 +1,6 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css');
 
-.led-container {
+.leds-container {
 	display: none;
 }
 
@@ -9,6 +9,10 @@
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.last-trip {
+	display: none
 }
 
 .led-box {
